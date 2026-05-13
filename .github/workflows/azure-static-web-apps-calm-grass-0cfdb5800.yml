@@ -28,9 +28,9 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
           ###### KONFIGURASI PENTING ######
-          app_location: "/"             
-          api_location: ""              
-          output_location: "build/web"  # Folder tempat index.html berada
+          app_location: "./build"
+          api_location: ""
+          app_artifact_location: "." # Folder tempat index.html berada
           skip_app_build: true          # Gunakan build lokal dari pygbag
           ##################################
 
