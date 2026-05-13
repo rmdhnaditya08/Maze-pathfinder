@@ -39,12 +39,10 @@ jobs:
                 azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
                 repo_token: ${{ secrets.GITHUB_TOKEN }}
                 action: "upload"
-                ###### SESUAIKAN BAGIAN INI ######
-                app_location: "/"             # Lokasi kode sumber
-                api_location: ""              # Kosongkan jika tidak ada backend API
-                output_location: "build/web"  # FOLDER TEMPAT index.html BERADA
-                skip_app_build: true          # TAMBAHKAN INI: Jangan biarkan Azure mencoba build ulang
-                ##################################
+                app_location: "/"
+                api_location: ""
+                output_location: "build/web"
+                skip_app_build: true
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
