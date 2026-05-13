@@ -23,16 +23,13 @@ jobs:
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
         with:
-          # SESUAIKAN DENGAN GAMBAR SETTINGS KAMU
           azure_static_web_apps_api_token: ${{ secrets.AZURE_TOKEN }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
-          ###### KONFIGURASI PENTING ######
-          app_location: "./build"
+          app_location: "/"
           api_location: ""
-          app_artifact_location: "." # Folder tempat index.html berada
-          skip_app_build: true          # Gunakan build lokal dari pygbag
-          ##################################
+          output_location: "build/web"
+          skip_app_build: true
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
