@@ -1,6 +1,8 @@
 import os
 os.environ['SDL_AUDIODRIVER'] = 'dummy'
-os.environ['SDL_MIXER_DISABLE'] = '1'
+os.environ['SDL_MIXER_DISABLE_INIT'] = '1'
+
+import sys
 
 import sys
 import os

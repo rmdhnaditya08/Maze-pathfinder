@@ -1,0 +1,14 @@
+{
+  "globalHeaders": {
+    "Cross-Origin-Opener-Policy": "same-origin",
+    "Cross-Origin-Embedder-Policy": "credentialless",
+    "Cross-Origin-Resource-Policy": "cross-origin"
+  },
+  "mimeTypes": {
+    ".gz": "application/gzip",
+    ".wasm": "application/wasm",
+    ".tar.gz": "application/gzip",
+    ".js": "text/javascript",
+    ".data": "application/octet-stream"
+  }
+}
