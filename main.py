@@ -1,7 +1,6 @@
-"""
-main.py - Modified for Web/Azure Deployment
-Entry point game Maze Pathfinder.
-"""
+import os
+os.environ['SDL_AUDIODRIVER'] = 'dummy'
+os.environ['SDL_MIXER_DISABLE'] = '1'
 
 import sys
 import os
