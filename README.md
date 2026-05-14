@@ -1,4 +1,4 @@
-# 🧩 Maze Pathfinder
+# Maze Pathfinder
 
 |    NRP     |      Name      |
 | :--------: | :------------: |
@@ -16,7 +16,7 @@
 
 ---
 
-## 🎯 Tentang Proyek
+## Tentang Proyek
 
 **Maze Pathfinder** adalah aplikasi game edukatif yang menggabungkan gameplay eksplorasi labirin dengan visualisasi algoritma pathfinding. Pemain menavigasi maze yang dihasilkan secara prosedural, sementara fitur hint menampilkan cara kerja algoritma **Dijkstra** secara langsung — sel mana yang dieksplorasi, dan jalur terpendek yang ditemukan.
 
@@ -27,22 +27,22 @@ Proyek ini cocok untuk:
 
 ---
 
-## ✨ Fitur
+## Fitur
 
 | Fitur | Deskripsi |
 |---|---|
-| 🗺️ **Maze Prosedural** | Maze unik setiap sesi menggunakan DFS Recursive Backtracker |
-| 🔍 **Hint Dijkstra** | Visualisasi real-time jalur optimal & sel yang dieksplorasi |
-| 📊 **Statistik Live** | Langkah, waktu, dan efisiensi rute pemain |
-| 🎮 **6 Level** | Maze membesar setiap level (11×11 hingga 35×35) |
-| 🟦 **Trail Pemain** | Jejak pergerakan pemain ditampilkan di grid |
-| 🏆 **Win Screen** | Ringkasan performa dengan perbandingan jalur optimal |
-| ⌨️ **Dual Input** | Mendukung Arrow Keys dan WASD |
-| 🌐 **Web-Ready** | Kompatibel dengan Pygbag untuk deployment berbasis browser |
+|  **Maze Prosedural** | Maze unik setiap sesi menggunakan DFS Recursive Backtracker |
+|  **Hint Dijkstra** | Visualisasi real-time jalur optimal & sel yang dieksplorasi |
+|  **Statistik Live** | Langkah, waktu, dan efisiensi rute pemain |
+|  **6 Level** | Maze membesar setiap level (11×11 hingga 35×35) |
+|  **Trail Pemain** | Jejak pergerakan pemain ditampilkan di grid |
+|  **Win Screen** | Ringkasan performa dengan perbandingan jalur optimal |
+|  **Dual Input** | Mendukung Arrow Keys dan WASD |
+|  **Web-Ready** | Kompatibel dengan Pygbag untuk deployment berbasis browser |
 
 ---
 
-## 📸 Screenshot
+## Screenshot
 
 <img width="527" height="683" alt="screenshot-2026-05-14_17 49 24" src="https://github.com/user-attachments/assets/c1b0a96f-3ed8-442e-9c5a-2cb956d70a72" />
 
@@ -59,7 +59,7 @@ Proyek ini cocok untuk:
 
 ---
 
-## 🏗️ Arsitektur Proyek
+## Arsitektur Proyek
 
 ```
 maze-pathfinder/
@@ -90,7 +90,7 @@ maze-pathfinder/
 
 ---
 
-## 🔬 Penjelasan Kode
+## Penjelasan Kode
 
 ### `cell.py` — Representasi Sel
 
@@ -212,7 +212,7 @@ HINT_VISITED  = ( 80,  20, 150)   # ungu untuk sel Dijkstra
 
 ---
 
-## 🚀 Cara Menjalankan
+## Cara Menjalankan
 
 ### Prasyarat
 
@@ -278,7 +278,7 @@ Buka `http://localhost:8000` di browser setelah build selesai.
 
 ---
 
-## 🧠 Algoritma
+## Algoritma
 
 ### DFS Recursive Backtracker (Maze Generation)
 
@@ -303,7 +303,7 @@ Hint menampilkan dua informasi sekaligus:
 
 ---
 
-## 📈 Level & Progression
+## Level & Progression
 
 | Level | Ukuran Maze | Jumlah Sel |
 |---|---|---|
@@ -318,7 +318,7 @@ Setiap level baru menghasilkan maze yang lebih besar dan kompleks. Setelah level
 
 ---
 
-## 🗺️ Roadmap
+## Roadmap
 
 - [ ] Tambahkan algoritma A* sebagai alternatif hint
 - [ ] Mode timer dengan leaderboard lokal
@@ -329,15 +329,8 @@ Setiap level baru menghasilkan maze yang lebih besar dan kompleks. Setelah level
 
 ---
 
-## 🤝 Kontribusi
+## Kontribusi
 
 Kontribusi sangat disambut! Silakan buka *issue* untuk melaporkan bug atau mengusulkan fitur baru, lalu kirim *pull request* dengan deskripsi perubahan yang jelas.
 
 ---
-
-## 📄 Lisensi
-
-Proyek ini dilisensikan di bawah **MIT License** — bebas digunakan, dimodifikasi, dan didistribusikan dengan tetap mencantumkan atribusi.
-
----
-
