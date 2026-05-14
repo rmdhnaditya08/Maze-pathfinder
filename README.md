@@ -59,22 +59,7 @@ Proyek ini cocok untuk:
 
 ## 📸 Screenshot
 
-> Berikut tampilan antarmuka Maze Pathfinder saat berjalan:
-
-```
-┌─────────────────────────────┬──────────────────┐
-│                             │  Maze Pathfinder  │
-│   [S]───────┐   ┌───┐       │  ─────────────── │
-│       ┌─┐   │   │   │       │  LEVEL       1   │
-│       │ └───┘   └─┐ │       │  MAZE      11×11  │
-│   ┌───┘ ┌─────────┘ │       │  LANGKAH     23  │
-│   │     │     ┌─────┘       │  WAKTU       14s  │
-│   └─────┘ ┌───┘             │  ─────────────── │
-│       ┌───┘ ┌─────┐         │  [DIJKSTRA HINT] │
-│   ┌───┘     │   [E]         │  ✓ Hint aktif    │
-│                             │  Optimal: 18 lgk │
-└─────────────────────────────┴──────────────────┘
-```
+<img width="527" height="683" alt="screenshot-2026-05-14_17 49 24" src="https://github.com/user-attachments/assets/c1b0a96f-3ed8-442e-9c5a-2cb956d70a72" />
 
 **Keterangan warna:**
 
