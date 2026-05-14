@@ -16,21 +16,6 @@
 
 ---
 
-## 📋 Daftar Isi
-
-- [Tentang Proyek](#-tentang-proyek)
-- [Fitur](#-fitur)
-- [Screenshot](#-screenshot)
-- [Arsitektur Proyek](#-arsitektur-proyek)
-- [Penjelasan Kode](#-penjelasan-kode)
-- [Cara Menjalankan](#-cara-menjalankan)
-- [Kontrol](#-kontrol)
-- [Algoritma](#-algoritma)
-- [Level & Progression](#-level--progression)
-- [Roadmap](#-roadmap)
-
----
-
 ## 🎯 Tentang Proyek
 
 **Maze Pathfinder** adalah aplikasi game edukatif yang menggabungkan gameplay eksplorasi labirin dengan visualisasi algoritma pathfinding. Pemain menavigasi maze yang dihasilkan secara prosedural, sementara fitur hint menampilkan cara kerja algoritma **Dijkstra** secara langsung — sel mana yang dieksplorasi, dan jalur terpendek yang ditemukan.
@@ -356,6 +341,3 @@ Proyek ini dilisensikan di bawah **MIT License** — bebas digunakan, dimodifika
 
 ---
 
-<p align="center">
-  Dibuat dengan ❤️ menggunakan Python & Pygame
-</p>
