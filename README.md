@@ -1,4 +1,4 @@
-# 🧩 Nawasena 2026 — Maze Pathfinder
+# Maze Pathfinder
 
 > **Design & Analysis of Algorithms** — Group Project  
 > Game maze interaktif dengan implementasi algoritma **Dijkstra** sebagai fitur hint jalur terpendek.
