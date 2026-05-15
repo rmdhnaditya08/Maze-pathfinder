@@ -6,7 +6,7 @@
 | 5025241129 | Mochamad Ramadhan Aditya Rachaman |
 | 5025241147 | Lucky Himawan Prasetya |
 
-> Maze generator dan pathfinder interaktif berbasis Pygame dengan visualisasi algoritma Dijkstra secara real-time.
+> An interactive maze generator and pathfinder built with Pygame featuring real-time Dijkstra algorithm visualization.
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?style=flat-square&logo=python&logoColor=white)
 ![Pygame](https://img.shields.io/badge/Pygame-2.5%2B-green?style=flat-square&logo=python)
@@ -16,29 +16,29 @@
 
 ---
 
-## Tentang Proyek
+## About the Project
 
-**Maze Pathfinder** adalah aplikasi game edukatif yang menggabungkan gameplay eksplorasi labirin dengan visualisasi algoritma pathfinding. Pemain menavigasi maze yang dihasilkan secara prosedural, sementara fitur hint menampilkan cara kerja algoritma **Dijkstra** secara langsung — sel mana yang dieksplorasi, dan jalur terpendek yang ditemukan.
+**Maze Pathfinder** is an educational game application that combines maze exploration gameplay with pathfinding algorithm visualization. Players navigate through procedurally generated mazes, while the hint feature displays the inner workings of the **Dijkstra** algorithm in real-time — which cells are being explored, and the shortest path found.
 
-Proyek ini cocok untuk:
-- Pemula yang ingin memahami **algoritma graph** secara visual
-- Developer yang belajar **Pygame** dan struktur game sederhana
-- Demonstrasi **DFS maze generation** dan **Dijkstra pathfinding**
+This project is ideal for:
+- Beginners who want to understand **graph algorithms** visually
+- Developers learning **Pygame** and simple game architecture
+- Demonstrations of **DFS maze generation** and **Dijkstra pathfinding**
 
 ---
 
-## Fitur
+## Features
 
-| Fitur | Deskripsi |
+| Feature | Description |
 |---|---|
-|  **Maze Prosedural** | Maze unik setiap sesi menggunakan DFS Recursive Backtracker |
-|  **Hint Dijkstra** | Visualisasi real-time jalur optimal & sel yang dieksplorasi |
-|  **Statistik Live** | Langkah, waktu, dan efisiensi rute pemain |
-|  **6 Level** | Maze membesar setiap level (11×11 hingga 35×35) |
-|  **Trail Pemain** | Jejak pergerakan pemain ditampilkan di grid |
-|  **Win Screen** | Ringkasan performa dengan perbandingan jalur optimal |
-|  **Dual Input** | Mendukung Arrow Keys dan WASD |
-|  **Web-Ready** | Kompatibel dengan Pygbag untuk deployment berbasis browser |
+| **Procedural Maze** | A unique maze every session using DFS Recursive Backtracker |
+| **Dijkstra Hint** | Real-time visualization of the optimal path & explored cells |
+| **Live Statistics** | Player steps, time elapsed, and route efficiency |
+| **6 Levels** | Maze grows larger each level (11×11 up to 35×35) |
+| **Player Trail** | Player movement history displayed on the grid |
+| **Win Screen** | Performance summary with optimal path comparison |
+| **Dual Input** | Supports both Arrow Keys and WASD |
+| **Web-Ready** | Compatible with Pygbag for browser-based deployment |
 
 ---
 
@@ -46,55 +46,55 @@ Proyek ini cocok untuk:
 
 <img width="527" height="683" alt="screenshot-2026-05-14_17 49 24" src="https://github.com/user-attachments/assets/c1b0a96f-3ed8-442e-9c5a-2cb956d70a72" />
 
-**Keterangan warna:**
+**Color legend:**
 
-| Warna | Elemen |
+| Color | Element |
 |---|---|
-| 🟢 Hijau Neon | Posisi START |
-| 🟠 Oranye | Posisi END (tujuan) |
-| 🔵 Cyan Terang | Posisi pemain saat ini |
-| 🟦 Biru Gelap | Jejak (trail) pergerakan |
-| 💙 Biru Cerah | Jalur hint optimal Dijkstra |
-| 🟣 Ungu Gelap | Sel yang dieksplorasi Dijkstra |
+| 🟢 Neon Green | START position |
+| 🟠 Orange | END position (goal) |
+| 🔵 Bright Cyan | Current player position |
+| 🟦 Dark Blue | Player movement trail |
+| 💙 Light Blue | Dijkstra optimal hint path |
+| 🟣 Dark Purple | Cells explored by Dijkstra |
 
 ---
 
-## Arsitektur Proyek
+## Project Architecture
 
 ```
 maze-pathfinder/
 │
-├── main.py             # Entry point — game loop utama (async/Pygbag-ready)
+├── main.py             # Entry point — main game loop (async/Pygbag-ready)
 │
 ├── core/
-│   ├── cell.py         # Representasi satu sel grid (dinding & koneksi)
-│   ├── maze.py         # Grid maze + DFS generator
-│   ├── player.py       # State pemain (posisi, langkah, riwayat)
-│   └── game_state.py   # State machine: PLAYING → WIN, logika gerak & hint
+│   ├── cell.py         # Single grid cell representation (walls & connections)
+│   ├── maze.py         # Maze grid + DFS generator
+│   ├── player.py       # Player state (position, steps, history)
+│   └── game_state.py   # State machine: PLAYING → WIN, movement & hint logic
 │
 ├── algorithms/
-│   └── dijkstra.py     # Algoritma Dijkstra (pathfinding + rekonstruksi jalur)
+│   └── dijkstra.py     # Dijkstra algorithm (pathfinding + path reconstruction)
 │
 ├── visualization/
-│   ├── renderer.py     # Semua operasi drawing via Pygame
-│   ├── ui.py           # Komponen UI: Button, Toast notification
-│   └── colors.py       # Konstanta warna RGB
+│   ├── renderer.py     # All drawing operations via Pygame
+│   ├── ui.py           # UI components: Button, Toast notification
+│   └── colors.py       # RGB color constants
 │
-└── requirements.txt    # Dependensi Python
+└── requirements.txt    # Python dependencies
 ```
 
-**Pola desain yang digunakan:**
-- **State Machine** — `GameState` mengelola transisi `PLAYING → WIN`
-- **Separation of Concerns** — logika, rendering, dan algoritma dipisah
-- **Lazy Evaluation** — hint Dijkstra hanya dihitung saat pengguna memintanya
+**Design patterns used:**
+- **State Machine** — `GameState` manages the `PLAYING → WIN` transition
+- **Separation of Concerns** — logic, rendering, and algorithms are decoupled
+- **Lazy Evaluation** — Dijkstra hint is only computed when the user requests it
 
 ---
 
-## Penjelasan Kode
+## Code Explanation
 
-### `cell.py` — Representasi Sel
+### `cell.py` — Cell Representation
 
-Setiap sel di grid maze memiliki 4 dinding (atas, kanan, bawah, kiri). Dinding bernilai `True` berarti tertutup, `False` berarti terbuka (jalan dapat dilalui).
+Each cell in the maze grid has 4 walls (top, right, bottom, left). A wall set to `True` means it is closed; `False` means it is open (a passable path).
 
 ```python
 class Cell:
@@ -106,13 +106,13 @@ class Cell:
     }
 ```
 
-Method `open_neighbors()` mengembalikan daftar tetangga yang dapat diakses — digunakan oleh Dijkstra saat traversal graf.
+The `open_neighbors()` method returns a list of accessible neighbors — used by Dijkstra during graph traversal.
 
 ---
 
-### `maze.py` — Generator DFS Recursive Backtracker
+### `maze.py` — DFS Recursive Backtracker Generator
 
-Maze dibuat menggunakan **DFS iteratif dengan stack**. Algoritma ini menjamin setiap maze adalah *perfect maze* (selalu ada tepat satu jalur antara dua titik mana pun).
+The maze is built using an **iterative DFS with a stack**. This algorithm guarantees that every generated maze is a *perfect maze* (there is always exactly one path between any two points).
 
 ```python
 def _generate(self):
@@ -120,24 +120,24 @@ def _generate(self):
     visited[0][0] = True
     while stack:
         r, c = stack[-1]
-        unvisited = [tetangga yang belum dikunjungi]
+        unvisited = [unvisited neighbors]
         if unvisited:
-            pilih acak → buka dinding → push ke stack
+            pick random → remove wall → push to stack
         else:
             stack.pop()  # backtrack
 ```
 
-**Kompleksitas:** O(rows × cols) — setiap sel dikunjungi tepat satu kali.
+**Complexity:** O(rows × cols) — each cell is visited exactly once.
 
 ---
 
-### `dijkstra.py` — Pathfinding dengan Priority Queue
+### `dijkstra.py` — Pathfinding with Priority Queue
 
-Implementasi Dijkstra menggunakan `heapq` (min-heap). Karena setiap langkah berbobot sama (1), Dijkstra identik dengan BFS di sini, namun tetap menggunakan heap sesuai definisi algoritma aslinya.
+The Dijkstra implementation uses `heapq` (min-heap). Since every step has an equal weight of 1, Dijkstra is equivalent to BFS here, but the heap is retained to correctly represent the original algorithm.
 
 ```python
 def dijkstra(maze, start, end):
-    heap = [(0, start_row, start_col)]   # (jarak, r, c)
+    heap = [(0, start_row, start_col)]   # (distance, r, c)
     while heap:
         d, r, c = heapq.heappop(heap)
         for nr, nc in maze.neighbors_open(r, c):
@@ -146,17 +146,17 @@ def dijkstra(maze, start, end):
                 heapq.heappush(heap, (new_dist, nr, nc))
 ```
 
-Fungsi ini mengembalikan dua nilai:
-- `path` — list koordinat dari START ke END (jalur terpendek)
-- `visited` — semua sel yang dieksplorasi (untuk visualisasi ungu)
+This function returns two values:
+- `path` — list of coordinates from START to END (shortest path)
+- `visited` — all cells explored during the search (for purple visualization)
 
-**Kompleksitas:** O((V + E) log V) — V = jumlah sel, E = jumlah edge terbuka.
+**Complexity:** O((V + E) log V) — V = number of cells, E = number of open edges.
 
 ---
 
-### `game_state.py` — Logika & State Machine
+### `game_state.py` — Logic & State Machine
 
-`GameState` adalah inti game. Ia menyatukan maze, pemain, hint, dan timer.
+`GameState` is the core of the game. It ties together the maze, player, hint system, and timer.
 
 ```python
 class State(Enum):
@@ -164,71 +164,71 @@ class State(Enum):
     WIN     = auto()
 
 class GameState:
-    LEVEL_SIZES = [11, 15, 19, 23, 29, 35]  # ukuran maze per level
+    LEVEL_SIZES = [11, 15, 19, 23, 29, 35]  # maze size per level
 ```
 
-Metode penting:
-- `move(direction)` — validasi dinding, gerakkan pemain, cek kemenangan
-- `toggle_hint()` — jalankan/matikan Dijkstra dari posisi saat ini
-- `tick()` — update timer setiap frame
+Key methods:
+- `move(direction)` — validates walls, moves the player, checks win condition
+- `toggle_hint()` — runs/disables Dijkstra from the current player position
+- `tick()` — updates the timer every frame
 
 ---
 
-### `renderer.py` — Rendering Berlapis
+### `renderer.py` — Layered Rendering
 
-Drawing dilakukan dalam urutan layer agar elemen tidak saling menimpa:
+Drawing is performed in a defined layer order to prevent elements from overlapping incorrectly:
 
 ```
-Layer 1: Background sel (passage / trail / hint)
-Layer 2: Hint visited (ungu — sel dieksplorasi Dijkstra)
-Layer 3: Trail pemain (biru gelap)
-Layer 4: Hint path highlight (cyan transparan via SRCALPHA)
-Layer 5: Garis dinding
-Layer 6: Marker START & END
-Layer 7: Lingkaran pemain + efek glow
-Layer 8: Panel UI kanan
-Layer 9: Win screen overlay (jika menang)
+Layer 1:  Cell background (passage / trail / hint)
+Layer 2:  Hint visited (purple — Dijkstra explored cells)
+Layer 3:  Player trail (dark blue)
+Layer 4:  Hint path highlight (transparent cyan via SRCALPHA)
+Layer 5:  Wall lines
+Layer 6:  START & END markers
+Layer 7:  Player circle + glow effect
+Layer 8:  Right-side UI panel
+Layer 9:  Win screen overlay (when player wins)
 Layer 10: Toast notification
 ```
 
 ---
 
-### `ui.py` — Komponen UI
+### `ui.py` — UI Components
 
-- **`Button`** — tombol klikabel dengan efek hover, mendukung state disabled
-- **`Toast`** — notifikasi sementara (2.5 detik) dengan fade-out animasi di 0.5 detik terakhir
+- **`Button`** — clickable button with hover effect, supports disabled state
+- **`Toast`** — temporary notification (2.5 seconds) with fade-out animation in the last 0.5 seconds
 
 ---
 
-### `colors.py` — Sistem Warna
+### `colors.py` — Color System
 
-Semua warna didefinisikan sebagai konstanta RGB terpusat agar mudah diganti tanpa mengubah kode rendering.
+All colors are defined as centralized RGB constants, making it easy to restyle the app without touching rendering code.
 
 ```python
-BG_DARK       = (  8,  18,  28)   # latar belakang gelap
-PLAYER_COLOR  = (  0, 220, 255)   # cyan terang untuk pemain
-HINT_VISITED  = ( 80,  20, 150)   # ungu untuk sel Dijkstra
+BG_DARK       = (  8,  18,  28)   # dark background
+PLAYER_COLOR  = (  0, 220, 255)   # bright cyan for player
+HINT_VISITED  = ( 80,  20, 150)   # purple for Dijkstra cells
 ```
 
 ---
 
-## Cara Menjalankan
+## How to Run
 
-### Prasyarat
+### Prerequisites
 
-- **Python 3.10** atau lebih baru
-- **pip** (package manager Python)
+- **Python 3.10** or newer
+- **pip** (Python package manager)
 
-### Instalasi
+### Installation
 
-**1. Clone repositori**
+**1. Clone the repository**
 
 ```bash
 git clone https://github.com/username/maze-pathfinder.git
 cd maze-pathfinder
 ```
 
-**2. (Opsional) Buat virtual environment**
+**2. (Optional) Create a virtual environment**
 
 ```bash
 python -m venv venv
@@ -240,97 +240,97 @@ venv\Scripts\activate
 source venv/bin/activate
 ```
 
-**3. Install dependensi**
+**3. Install dependencies**
 
 ```bash
 pip install -r requirements.txt
 ```
 
-**4. Jalankan aplikasi**
+**4. Run the application**
 
 ```bash
 python main.py
 ```
 
-### Menjalankan di Browser (via Pygbag)
+### Running in Browser (via Pygbag)
 
-Proyek ini sudah kompatibel dengan **Pygbag** untuk deployment web:
+This project is already compatible with **Pygbag** for web deployment:
 
 ```bash
 pip install pygbag
 pygbag main.py
 ```
 
-Buka `http://localhost:8000` di browser setelah build selesai.
+Open `http://localhost:8000` in your browser once the build is complete.
 
 ---
 
-## ⌨️ Kontrol
+## ⌨️ Controls
 
-| Tombol | Fungsi |
+| Key | Function |
 |---|---|
-| `↑` `↓` `←` `→` | Gerakkan pemain |
-| `W` `A` `S` `D` | Gerakkan pemain (alternatif) |
-| `H` | Aktifkan / matikan hint Dijkstra |
-| `R` | Restart dari posisi awal (maze sama) |
-| `N` | Buat maze baru (level sama) / lanjut ke level berikutnya (saat menang) |
-| `ESC` | Keluar dari aplikasi |
+| `↑` `↓` `←` `→` | Move player |
+| `W` `A` `S` `D` | Move player (alternative) |
+| `H` | Toggle Dijkstra hint on/off |
+| `R` | Restart from starting position (same maze) |
+| `N` | Generate new maze (same level) / advance to next level (when won) |
+| `ESC` | Quit the application |
 
 ---
 
-## Algoritma
+## Algorithms
 
 ### DFS Recursive Backtracker (Maze Generation)
 
-Menghasilkan *perfect maze* — labirin di mana setiap dua sel memiliki tepat satu jalur unik. Sifat ini memastikan maze selalu memiliki solusi dan tidak ada sel yang terisolasi.
+Generates a *perfect maze* — a labyrinth where every two cells share exactly one unique path. This property ensures the maze always has a solution and no cell is ever isolated.
 
 ```
-Mulai di (0,0)
-  → Pilih tetangga belum dikunjungi secara acak
-  → Hapus dinding di antara keduanya
-  → Pindah ke tetangga tersebut
-  → Jika tidak ada tetangga → backtrack
-  → Ulangi sampai semua sel dikunjungi
+Start at (0,0)
+  → Randomly pick an unvisited neighbor
+  → Remove the wall between them
+  → Move to that neighbor
+  → If no unvisited neighbors → backtrack
+  → Repeat until all cells are visited
 ```
 
 ### Dijkstra (Pathfinding)
 
-Menemukan jalur terpendek dari posisi pemain ke tujuan. Karena semua edge berbobot 1, jumlah langkah minimal sama dengan jarak BFS, namun implementasi heap dipertahankan untuk keakuratan representasi algoritma.
+Finds the shortest path from the player's current position to the goal. Since all edges have a weight of 1, the minimum number of steps equals the BFS distance, but the heap implementation is retained for an accurate representation of the algorithm.
 
-Hint menampilkan dua informasi sekaligus:
-- **Sel ungu** — sel yang "dilihat" algoritma (explored)
-- **Sel biru cerah** — jalur terpendek yang ditemukan (optimal path)
+The hint displays two pieces of information simultaneously:
+- **Purple cells** — cells "seen" by the algorithm (explored)
+- **Bright blue cells** — the shortest path found (optimal path)
 
 ---
 
-## Level & Progression
+## Levels & Progression
 
-| Level | Ukuran Maze | Jumlah Sel |
+| Level | Maze Size | Total Cells |
 |---|---|---|
 | 1 | 11 × 11 | 121 |
 | 2 | 15 × 15 | 225 |
 | 3 | 19 × 19 | 361 |
 | 4 | 23 × 23 | 529 |
 | 5 | 29 × 29 | 841 |
-| 6+ | 35 × 35 | 1.225 |
+| 6+ | 35 × 35 | 1,225 |
 
-Setiap level baru menghasilkan maze yang lebih besar dan kompleks. Setelah level 6, ukuran tetap di 35×35 dengan layout yang selalu berbeda.
+Each new level generates a larger and more complex maze. After level 6, the size stays at 35×35 but the layout is always different.
 
 ---
 
 ## Roadmap
 
-- [ ] Tambahkan algoritma A* sebagai alternatif hint
-- [ ] Mode timer dengan leaderboard lokal
-- [ ] Animasi pemain (sprite movement)
-- [ ] Tema warna yang dapat dipilih (dark / light / retro)
-- [ ] Ekspor maze ke format gambar PNG
-- [ ] Multiplayer lokal (layar terpisah)
+- [ ] Add A* algorithm as an alternative hint mode
+- [ ] Timer mode with local leaderboard
+- [ ] Player animation (sprite movement)
+- [ ] Selectable color themes (dark / light / retro)
+- [ ] Export maze as PNG image
+- [ ] Local multiplayer (split screen)
 
 ---
 
-## Kontribusi
+## Contributing
 
-Kontribusi sangat disambut! Silakan buka *issue* untuk melaporkan bug atau mengusulkan fitur baru, lalu kirim *pull request* dengan deskripsi perubahan yang jelas.
+Contributions are very welcome! Feel free to open an *issue* to report bugs or suggest new features, then submit a *pull request* with a clear description of your changes.
 
 ---
