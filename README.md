@@ -328,9 +328,3 @@ Each new level generates a larger and more complex maze. After level 6, the size
 - [ ] Local multiplayer (split screen)
 
 ---
-
-## Contributing
-
-Contributions are very welcome! Feel free to open an *issue* to report bugs or suggest new features, then submit a *pull request* with a clear description of your changes.
-
----
